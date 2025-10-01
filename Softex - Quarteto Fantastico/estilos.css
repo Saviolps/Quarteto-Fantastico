@@ -1,6 +1,173 @@
-body. {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0a0f2c;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
+
+header {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #01051a, #020b3da2);
+    color: #ffffff;
+}
+.loading{
+    text-align: center;
+    font-size: 2rem;
+    color: #ffcc00;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.card {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.178);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    background: #0f2b50;
+}
+
+.sobre {
+    background: rgba(255, 255, 255, 0.15);
+    /* transparente */
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sobre h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.sobre p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.sobre {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sobre h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.sobre p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.perfil {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: transparent;
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.178);
+    box-shadow: 0 4px 30px rgba(28, 27, 94, 0.3);
+}
+
+.perfil img {
+    width: 250px;
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.perfil h1 {
+    font-size: 2rem;
+    background-color: #0110535d;
+    border-radius: 8px;
+}
+
+.bio {
+    font-size: 1.1rem;
+    margin: 1rem 0 2rem;
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.lista li {
+    background: #064477;
+    margin: 0.5rem auto;
+    padding: 0.8rem;
+    border-radius: 8px;
+    max-width: 500px;
+}
+.lista li:hover {
+    background: #3677ac;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.frases blockquote {
+    margin: 1rem auto;
+    padding: 1rem;
+    background: #044f8b;
+    border-radius: 8px;
+    max-width: 500px;
+    font-style: italic;
+}
+
+.frases blockquote:hover {
+    background: #3677ac;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
