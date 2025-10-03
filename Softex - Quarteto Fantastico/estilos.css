@@ -1,23 +1,29 @@
+/* Importa fontes do Google */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Estilo geral */
 body {
     font-family: "Poppins", sans-serif;
     background: #0a0f2c;
     margin: 0;
     padding: 0;
     text-align: center;
+    color: white;
 }
 
+/* ===== HEADER ===== */
 header {
     padding: 2rem;
     background: linear-gradient(to bottom, #01051a, #020b3da2);
     color: #ffffff;
 }
-.loading{
-    text-align: center;
-    font-size: 2rem;
-    color: #ffcc00;
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px #000, 0 0 15px #0ff, 0 0 25px #08f;
 }
+
+/* ===== CARDS ===== */
 .cards {
     display: flex;
     justify-content: center;
@@ -26,6 +32,7 @@ header {
     margin: 2rem;
 }
 
+/* Estilo de cada card */
 .card {
     background: transparent;
     padding: 1rem;
@@ -43,9 +50,9 @@ header {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.178);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-
 }
 
+/* Imagens dos cards */
 .card img {
     width: 100%;
     height: 250px;
@@ -53,14 +60,21 @@ header {
     border-radius: 10px;
 }
 
+/* Efeito hover dos cards */
 .card:hover {
-    transform: scale(1.08);
-    background: #0f2b50;
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #0f2b50, #132d63);
+    box-shadow: 0 0 20px #08f, 0 0 40px #0ff;
 }
 
+/* Card especial da Mulher Invisível */
+.mulher-invisivel-card img {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ===== SEÇÃO SOBRE ===== */
 .sobre {
     background: rgba(255, 255, 255, 0.15);
-    /* transparente */
     border-radius: 16px;
     padding: 2rem;
     margin: 2rem auto;
@@ -71,6 +85,7 @@ header {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .sobre h2 {
@@ -84,71 +99,92 @@ header {
     line-height: 1.6;
 }
 
-.sobre {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 2rem;
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== PERFIL DE PERSONAGENS ===== */
+.personagem-container {
+    display: grid;
+    grid-template-columns: 3fr 1.2fr; /* perfil maior, outros à direita */
+    gap: 3rem;
+    align-items: flex-start;
+    max-width: 1600px;
     margin: 2rem auto;
-    max-width: 800px;
-    text-align: center;
-    color: white;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-.sobre h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #ffcc00;
-}
-
-.sobre p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
+/* Área do perfil do herói */
 .perfil {
-    max-width: 700px;
-    margin: 2rem auto;
-    background: transparent;
-    padding: 2rem;
     border-radius: 20px;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(20, 30, 70, 0.7), rgba(0, 50, 100, 0.7));
+    border: 1px solid rgba(0, 200, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.7), inset 0 0 20px rgba(0, 120, 255, 0.2);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.178);
-    box-shadow: 0 4px 30px rgba(28, 27, 94, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+    color: white;
+    text-align: left;
+    width: 100%;
 }
 
-.perfil img {
-    width: 250px;
+/* Topo do perfil (foto + bio) */
+.perfil-topo {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: nowrap; /* mantém a bio ao lado da foto */
+}
+
+.perfil-left img {
+    width: 280px;
     border-radius: 12px;
-    margin: 1rem 0;
+    flex-shrink: 0;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.perfil h1 {
-    font-size: 2rem;
-    background-color: #0110535d;
-    border-radius: 8px;
+/* Texto ao lado da imagem */
+.perfil-info {
+    flex: 1;
+    text-align: left;
 }
 
+/* Títulos neon iguais ao da página inicial */
+.perfil-info h1,
+.perfil h2 {
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 8px #000, 
+        0 0 15px #0ff, 
+        0 0 25px #08f;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+/* Biografia */
 .bio {
     font-size: 1.1rem;
     margin: 1rem 0 2rem;
+    line-height: 1.6;
 }
 
+/* Lista de poderes */
 .lista {
     list-style: none;
     padding: 0;
 }
 
 .lista li {
-    background: #064477;
+    background: linear-gradient(90deg, #064477, #0f74b5);
     margin: 0.5rem auto;
     padding: 0.8rem;
     border-radius: 8px;
     max-width: 500px;
+    color: #fff;
+    font-weight: 500;
 }
 .lista li:hover {
     background: #3677ac;
@@ -156,18 +192,60 @@ header {
     transition: 0.3s ease-in-out;
 }
 
+/* Frases icônicas */
 .frases blockquote {
     margin: 1rem auto;
     padding: 1rem;
-    background: #044f8b;
-    border-radius: 8px;
-    max-width: 500px;
+    background: rgba(0, 150, 255, 0.15);
+    border-left: 4px solid #0ff;
+    border-radius: 10px;
+    max-width: 600px;
     font-style: italic;
+    font-size: 1.1rem;
+    animation: glow 2s infinite alternate;
 }
-
 .frases blockquote:hover {
     background: #3677ac;
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
 }
 
+/* Animação de brilho nas frases */
+@keyframes glow {
+    from { text-shadow: 0 0 5px #0ff; }
+    to { text-shadow: 0 0 15px #0ff; }
+}
+
+/* ===== OUTROS HERÓIS ===== */
+.outros-herois {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Título da seção de outros heróis */
+.outros-herois h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px #0ff;
+    text-align: center;
+}
+
+/* Cards da seção lateral */
+.outros-herois .card {
+    width: 200px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.outros-herois .card h2 {
+    text-align: center;
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 8px #000, 0 0 10px #0ff;
+}

@@ -1,3 +1,4 @@
+// Objeto com os dados de todos os heróis (nome, imagem, biografia, poderes e frases)
 const dados = {
     "sr-fantastico": {
         nome: "Sr. Fantástico",
@@ -20,19 +21,29 @@ const dados = {
     "mulher-invisivel": {
         nome: "Mulher Invisível",
         img: "img/Invisible Woman.jpg",
-        bio: "Sue Storm é a força invisível do Quarteto Fantástico, uma heroína que vai muito além de suas habilidades únicas. Mais do que apenas invisível, ela é capaz de criar campos de força quase indestrutíveis, protegendo seus aliados em batalhas intensas. Sue é um pilar emocional e estratégico, sempre unindo a equipe.",
+        bio: `Susan “Sue” Storm-Richards é o coração do Quarteto Fantástico e uma das heroínas mais poderosas da Marvel. 
+        Após ser exposta aos raios cósmicos junto de sua equipe, ela ganhou a habilidade de manipular a luz e criar campos de força invisíveis. 
+        Muito mais que seus poderes, Sue é a base emocional do grupo: determinada, inteligente, protetora e, ao mesmo tempo, a figura materna e a líder tática que mantém a equipe unida. 
+        Sua trajetória marca a transição da “Garota Invisível” para a “Mulher Invisível”, uma heroína confiante e fundamental para o equilíbrio entre ciência, coragem e humanidade.`,
         poderes: [
-            "Invisibilidade – desaparecer totalmente do campo de visão.",
-            "Campos de Força – criar barreiras quase indestrutíveis.",
-            "Projeções de Energia – transformar energia em ataques ofensivos.",
-            "Controle de Força – manipular formas complexas de barreira.",
-            "Empatia Psíquica – sensibilidade a emoções.",
-            "Uso Tático – protege aliados com estratégia."
+            "Invisibilidade Avançada – pode desaparecer por completo ou tornar objetos e aliados invisíveis.",
+            "Campos de Força – gera barreiras protetoras quase indestrutíveis, adaptando tamanho e forma.",
+            "Construções de Energia – molda campos de força como armas, plataformas e aprisionamentos.",
+            "Projeções Ofensivas – usa pressão dos campos para atacar inimigos de forma devastadora.",
+            "Detecção de Energia e Luz – consegue manipular espectros invisíveis para localizar ou confundir adversários.",
+            "Liderança Estratégica – sua inteligência emocional e visão tática guiam o Quarteto em momentos críticos."
         ],
         frases: [
-            "Sou mais do que apenas invisível: sou invencível!",
-            "Minha família é minha força.",
-            "Nunca subestime o poder de uma mulher determinada."
+            "A Garota Invisível não existe mais, Reed. Ela morreu quando o Homem-Psíquico distorceu sua alma. A partir de agora, eu serei a Mulher Invisível!",
+            "Mesmo quando você não puder me ver, eu ainda farei você acreditar.",
+            "É meu trabalho pensar coisas terríveis para que coisas terríveis não aconteçam.",
+            "Eu estava tentando te proteger!",
+            "Me proteger? Olha só quanta propriedade eu posso destruir sem nem tentar!",
+            "A Mulher Invisível é o coração do Quarteto Fantástico.",
+            "Não importa o que a vida nos traga, vamos enfrentar juntos, como uma família.",
+            "Minha presença pode ser invisível aos olhos, mas jamais ao meu dever.",
+            "Eu luto não só com força, mas com o que sou: determinação, amor e responsabilidade.",
+            "Ser vista nunca foi a medida do meu poder."
         ]
     },
     "tocha-humana": {
@@ -73,26 +84,53 @@ const dados = {
     }
 };
 
+// Captura o parâmetro da URL (?heroi=nome)
 const params = new URLSearchParams(window.location.search);
 const heroi = params.get("heroi");
 
+// Se existir herói válido, mostra os dados na página
 if (heroi && dados[heroi]) {
     const p = dados[heroi];
+
     document.getElementById("personagem").innerHTML = `
-    <section class="perfil">
-      <img src="${p.img}" alt="${p.nome}">
-      <h1>${p.nome}</h1>
-    <p class="bio">${p.bio}</p>
+    <div class="personagem-container">
+        <!-- Perfil do personagem -->
+        <section class="perfil">
+            <div class="perfil-topo">
+                <div class="perfil-left">
+                    <img src="${p.img}" alt="${p.nome}">
+                    <div class="perfil-info">
+                        <h1>${p.nome}</h1>
+                        <p class="bio">${p.bio}</p>
+                    </div>
+                </div>
+            </div>
 
-      <h2>Poderes & Habilidades</h2>
-      <ul class="lista">
-        ${p.poderes.map(p => `<li>${p}</li>`).join("")}
-      </ul>
+            <!-- Lista de poderes -->
+            <h2>Poderes & Habilidades</h2>
+            <ul class="lista">
+                ${p.poderes.map(p => `<li>${p}</li>`).join("")}
+            </ul>
 
-      <h2>Frases Icônicas</h2>
-      <div class="frases">
-        ${p.frases.map(f => `<blockquote>${f}</blockquote>`).join("")}
-      </div>
-    </section>
-  `;
+            <!-- Frases do personagem -->
+            <h2>Frases Icônicas</h2>
+            <div class="frases">
+                ${p.frases.map(f => `<blockquote>${f}</blockquote>`).join("")}
+            </div>
+        </section>
+
+        <!-- Outros heróis (exceto o atual) -->
+        <aside class="outros-herois">
+            <h3>Outros Heróis</h3>
+            ${Object.keys(dados)
+                .filter(key => key !== heroi)
+                .map(key => `
+                    <a href="personagem.html?heroi=${key}" class="card">
+                        <img src="${dados[key].img}" alt="${dados[key].nome}">
+                        <h2>${dados[key].nome}</h2>
+                    </a>
+                `).join("")}
+        </aside>
+    </div>
+    `;
 }
