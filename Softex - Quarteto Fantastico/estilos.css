@@ -62,23 +62,9 @@ header h1 {
 
 /* Efeito hover dos cards */
 .card:hover {
-    transform: scale(1.08);
-    background: #0f2b50;
-}
-
-.sobre {
-    background: rgba(255, 255, 255, 0.15);
-    /* transparente */
-    border-radius: 16px;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    text-align: center;
-    color: white;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #0f2b50, #132d63);
+    box-shadow: 0 0 20px #08f, 0 0 40px #0ff;
 }
 
 /* Card especial da Mulher Invisível */
@@ -113,8 +99,19 @@ header h1 {
     line-height: 1.6;
 }
 
-.perfil {
-    max-width: 700px;
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== PERFIL DE PERSONAGENS ===== */
+.personagem-container {
+    display: grid;
+    grid-template-columns: 3fr 1.2fr; /* perfil maior, outros à direita */
+    gap: 3rem;
+    align-items: flex-start;
+    max-width: 1600px;
     margin: 2rem auto;
 }
 
@@ -171,6 +168,7 @@ header h1 {
 .bio {
     font-size: 1.1rem;
     margin: 1rem 0 2rem;
+    line-height: 1.6;
 }
 
 /* Lista de poderes */
@@ -180,7 +178,7 @@ header h1 {
 }
 
 .lista li {
-    background: #064477;
+    background: linear-gradient(90deg, #064477, #0f74b5);
     margin: 0.5rem auto;
     padding: 0.8rem;
     border-radius: 8px;
@@ -198,9 +196,10 @@ header h1 {
 .frases blockquote {
     margin: 1rem auto;
     padding: 1rem;
-    background: #044f8b;
-    border-radius: 8px;
-    max-width: 500px;
+    background: rgba(0, 150, 255, 0.15);
+    border-left: 4px solid #0ff;
+    border-radius: 10px;
+    max-width: 600px;
     font-style: italic;
     font-size: 1.1rem;
     animation: glow 2s infinite alternate;
