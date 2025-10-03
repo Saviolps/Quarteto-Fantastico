@@ -58,6 +58,43 @@ header {
     background: #0f2b50;
 }
 
+/* HOVER DAS IMAGENS DOS CARDS */
+.img-hover {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+.img-hover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Imagem padrão visível */
+.img-hover img.normal {
+    opacity: 1;
+}
+
+/* Imagem hover invisível até passar o mouse */
+.img-hover img.hover {
+    opacity: 0;
+}
+
+/* Troca ao passar o mouse */
+.img-hover:hover img.normal {
+    opacity: 0;
+}
+
+.img-hover:hover img.hover {
+    opacity: 1;
+}
+
 .sobre {
     background: rgba(255, 255, 255, 0.15);
     /* transparente */
@@ -110,6 +147,7 @@ header {
 }
 
 .perfil {
+    color: #ffcc00;
     max-width: 700px;
     margin: 2rem auto;
     background: transparent;
@@ -136,6 +174,7 @@ header {
 .bio {
     font-size: 1.1rem;
     margin: 1rem 0 2rem;
+    color: #ffffff;
 }
 
 .lista {
@@ -144,6 +183,7 @@ header {
 }
 
 .lista li {
+    color: #ffffff;
     background: #064477;
     margin: 0.5rem auto;
     padding: 0.8rem;
@@ -159,6 +199,7 @@ header {
 .frases blockquote {
     margin: 1rem auto;
     padding: 1rem;
+    color: #ffffff;
     background: #044f8b;
     border-radius: 8px;
     max-width: 500px;
