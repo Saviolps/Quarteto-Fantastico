@@ -135,11 +135,13 @@ header h1 {
     display: flex;
     gap: 2rem;
     margin-bottom: 2rem;
-    flex-wrap: nowrap; /* mantém a bio ao lado da foto */
+    flex-wrap: wrap; /* mantém a bio ao lado da foto */
+    align-items: flex-start;
 }
 
 .perfil-left img {
     width: 280px;
+    height: auto;
     border-radius: 12px;
     flex-shrink: 0;
     opacity: 0.9;
@@ -220,6 +222,7 @@ header h1 {
 .outros-herois {
     display: flex;
     flex-direction: column;
+    margin: 2rem;
     align-items: center;
     gap: 1.5rem;
 }
