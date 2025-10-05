@@ -67,7 +67,7 @@ const dados = {
     "coisa": {
         nome: "O Coisa",
         img: "img/O coisa.jpg",
-        bio: "Ben Grimm é a rocha viva que se tornou O Coisa, a personificação da força bruta com coração de ouro. Apesar de sua aparência monstruosa, ele é um herói leal e protetor. Ben luta para lidar com sua transformação, mas encontra força na amizade e no Quarteto Fantástico.",
+        bio: "Benjamin Jacob Grimm era um brilhante astronauta e piloto, ao ser transformado pela radiação cósmica passou a ser conhecido como o Coisa. Ele é a personificação da força bruta com coração de ouro. Apesar de sua aparência monstruosa, ele é um herói leal e protetor. Ben luta para lidar com sua transformação, mas encontra força na amizade e no Quarteto Fantástico.",
         poderes: [
             "Super Força – golpes devastadores.",
             "Corpo Rochoso – pele quase indestrutível.",
@@ -77,9 +77,7 @@ const dados = {
             "Durabilidade – resistência sobre-humana."
         ],
         frases: [
-            "É hora do show!",
-            "Eu sou o Coisa Azul... ops, Laranja!",
-            "Quanto mais me batem, mais forte eu fico!"
+            "Tá na hora do pau!"
         ]
     }
 };
