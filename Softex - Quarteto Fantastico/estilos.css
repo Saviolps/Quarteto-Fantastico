@@ -11,6 +11,7 @@ body {
     color: white;
 }
 
+
 /* ===== HEADER ===== */
 header {
     padding: 2rem;
@@ -74,24 +75,27 @@ header h1 {
 
 /* ===== SEÇÃO SOBRE ===== */
 .sobre {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(0, 50, 100, 0.4), rgba(0, 15, 40, 0.6));
+    border-radius: 20px;
     padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
+    margin: 3rem auto;
+    max-width: 850px;
+    color: #e6faff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    border: 1px solid rgba(0, 200, 255, 0.3);
     text-align: center;
-    color: white;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 .sobre h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #ffcc00;
+    font-size: 2.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 25px #0088ff;
+    animation: pulsar 2.5s infinite alternate;
+}
+
+@keyframes pulsar {
+    from { text-shadow: 0 0 10px #00ffff; }
+    to { text-shadow: 0 0 25px #0088ff; }
 }
 
 .sobre p {
@@ -111,7 +115,7 @@ header h1 {
     grid-template-columns: 3fr 1.2fr; /* perfil maior, outros à direita */
     gap: 3rem;
     align-items: flex-start;
-    max-width: 1600px;
+    max-width: 1400px; /*dimensão do perfil */
     margin: 2rem auto;
 }
 
@@ -140,8 +144,9 @@ header h1 {
 }
 
 .perfil-left img {
-    width: 280px;
-    height: auto;
+    width: 320px;          /* ajuste uniforme */
+    height: 420px;         /* altura fixa para todas */
+    object-fit: cover;     /* corta o excesso proporcionalmente */
     border-radius: 12px;
     flex-shrink: 0;
     opacity: 0.9;
@@ -164,19 +169,25 @@ header h1 {
         0 0 25px #08f;
     margin-top: 0;
     font-weight: 700;
+    text-align: center; /* centraliza o nome do herói e as seções */
 }
 
 /* Biografia */
 .bio {
     font-size: 1.1rem;
     margin: 1rem 0 2rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    text-align: justify; /* deixa o texto justificado */
 }
 
 /* Lista de poderes */
 .lista {
     list-style: none;
     padding: 0;
+    display: grid; /* duas colunas */
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 1rem;
+    justify-items: center;
 }
 
 .lista li {
@@ -184,9 +195,11 @@ header h1 {
     margin: 0.5rem auto;
     padding: 0.8rem;
     border-radius: 8px;
-    max-width: 500px;
+    max-width: 400px;
     color: #fff;
     font-weight: 500;
+    text-align: center;
+    width: 90%;
 }
 .lista li:hover {
     background: #3677ac;
@@ -205,7 +218,16 @@ header h1 {
     font-style: italic;
     font-size: 1.1rem;
     animation: glow 2s infinite alternate;
+    width: 90%;
 }
+
+.frases {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas */
+    gap: 1rem 2rem;
+    justify-items: center;
+}
+
 .frases blockquote:hover {
     background: #3677ac;
     transform: scale(1.05);
@@ -246,9 +268,63 @@ header h1 {
     justify-content: space-between;
 }
 
+/* ===== ALINHAMENTO DOS NOMES NOS CARDS DE OUTROS HERÓIS ===== */
 .outros-herois .card h2 {
     text-align: center;
-    margin: 0.5rem 0 0;
-    font-size: 1.1rem;
+    margin: 0;
+    padding: 0.8rem 0 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 600;
     text-shadow: 2px 2px 8px #000, 0 0 10px #0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2rem; /* garante equilíbrio mesmo se o nome tiver 1 ou 2 linhas */
+}
+
+/* ===== BOTÃO VOLTAR (versão simples e bonita) ===== */
+.voltar {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 1rem;
+}
+
+.btn-voltar {
+    background: #0b2d4b;
+    color: #e0f7ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #00bfff;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+}
+
+/* Hover suave e elegante */
+.btn-voltar:hover {
+    background: #00bfff;
+    color: #001327;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem;
+    color: #d8e9ff;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    margin-top: 2rem;
+    backdrop-filter: blur(6px);
+}
+
+footer strong {
+    color: #00ffff;
+    text-shadow: 0 0 8px #0077ff;
 }

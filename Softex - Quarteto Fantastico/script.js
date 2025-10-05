@@ -59,7 +59,7 @@ const dados = {
             "Nova Supernova – liberar explosão incandescente extrema."
         ],
         frases: [
-            "Chamas já! 🔥",
+            "Chamas já!",
             "Eu sou o cara mais quente da galáxia!",
             "Ninguém brilha como a Tocha Humana!"
         ]
@@ -77,7 +77,7 @@ const dados = {
             "Durabilidade – resistência sobre-humana."
         ],
         frases: [
-            "É hora do show! 💪",
+            "É hora do show!",
             "Eu sou o Coisa Azul... ops, Laranja!",
             "Quanto mais me batem, mais forte eu fico!"
         ]
@@ -99,15 +99,15 @@ if (heroi && dados[heroi]) {
             <div class="perfil-topo">
                 <div class="perfil-left">
                     <img src="${p.img}" alt="${p.nome}">
-                    <div class="perfil-info">
-                        <h1>${p.nome}</h1>
-                        <p class="bio">${p.bio}</p>
-                    </div>
+                </div>
+                <div class="perfil-info">
+                    <h1>${p.nome}</h1>
+                    <p class="bio">${p.bio}</p>
                 </div>
             </div>
 
             <!-- Lista de poderes -->
-            <h2>Poderes & Habilidades</h2>
+            <h2>Poderes e Habilidades</h2>
             <ul class="lista">
                 ${p.poderes.map(p => `<li>${p}</li>`).join("")}
             </ul>
@@ -117,6 +117,11 @@ if (heroi && dados[heroi]) {
             <div class="frases">
                 ${p.frases.map(f => `<blockquote>${f}</blockquote>`).join("")}
             </div>
+
+            <!-- Botão de voltar -->
+            <div class="voltar">
+                <a href="index.html" class="btn-voltar">⬅ Voltar à Página Inicial</a>
+            </div>
         </section>
 
         <!-- Outros heróis (exceto o atual) -->
@@ -124,12 +129,21 @@ if (heroi && dados[heroi]) {
             <h3>Outros Heróis</h3>
             ${Object.keys(dados)
                 .filter(key => key !== heroi)
-                .map(key => `
-                    <a href="personagem.html?heroi=${key}" class="card">
-                        <img src="${dados[key].img}" alt="${dados[key].nome}">
-                        <h2>${dados[key].nome}</h2>
-                    </a>
-                `).join("")}
+                .map(key => {
+                    const original = dados[key].img;
+                    const hoverImg = original.includes(' hover')
+                        ? original
+                        : original.replace(/(\.[^/.]+)$/, ' hover$1');
+                    return `
+                        <a href="personagem.html?heroi=${key}" class="card">
+                            <div class="img-hover">
+                                <img src="${original}" alt="${dados[key].nome}" class="normal">
+                                <img src="${hoverImg}" alt="${dados[key].nome} (hover)" class="hover">
+                            </div>
+                            <h2>${dados[key].nome}</h2>
+                        </a>
+                    `;
+                }).join("")}
         </aside>
     </div>
     `;
