@@ -59,6 +59,8 @@ const dados = {
             "Nova Supernova – liberar explosão incandescente extrema."
         ],
         frases: [
+            "Eu nunca fui o mais inteligente, ou o mais durão, ou o mais poderoso. Mas eu sou o mais quente!",
+            "Em chamas",
             "Chamas já!",
             "Eu sou o cara mais quente da galáxia!",
             "Ninguém brilha como a Tocha Humana!"
@@ -77,7 +79,9 @@ const dados = {
             "Durabilidade – resistência sobre-humana."
         ],
         frases: [
-            "Tá na hora do pau!"
+            "Tá na hora do pau!",
+            "Pela minha Tia Petúnia!",
+            "Eu não sou um monstro!"
         ]
     }
 };
