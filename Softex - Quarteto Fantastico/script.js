@@ -16,6 +16,11 @@ const dados = {
             "A ciência é o único milagre verdadeiro!",
             "Pense infinito... além do imaginável!",
             "O impossível é apenas o que ainda não descobrimos."
+        ],
+        curiosidades: [
+            "Reed Richards já foi líder dos Illuminati, um grupo secreto de gênios do universo Marvel.",
+            "Ele já derrotou vilões apenas usando sua inteligência, sem recorrer aos poderes.",
+            "É pai de Franklin e Valeria Richards, duas das crianças mais poderosas da Marvel."
         ]
     },
     "mulher-invisivel": {
@@ -44,6 +49,11 @@ const dados = {
             "Minha presença pode ser invisível aos olhos, mas jamais ao meu dever.",
             "Eu luto não só com força, mas com o que sou: determinação, amor e responsabilidade.",
             "Ser vista nunca foi a medida do meu poder."
+        ],
+        curiosidades: [
+            "Sue Storm já foi considerada a mulher mais poderosa da Marvel por criadores de quadrinhos.",
+            "Ela já liderou o Quarteto Fantástico em várias ocasiões.",
+            "Seus campos de força podem conter até explosões nucleares."
         ]
     },
     "tocha-humana": {
@@ -64,6 +74,11 @@ const dados = {
             "Chamas já!",
             "Eu sou o cara mais quente da galáxia!",
             "Ninguém brilha como a Tocha Humana!"
+        ],
+        curiosidades: [
+            "Johnny Storm já foi membro dos Vingadores e dos Inumanos.",
+            "Ele já perdeu e recuperou seus poderes diversas vezes.",
+            "É o irmão mais novo de Sue Storm, a Mulher Invisível."
         ]
     },
     "coisa": {
@@ -82,6 +97,11 @@ const dados = {
             "Tá na hora do pau!",
             "Pela minha Tia Petúnia!",
             "Eu não sou um monstro!"
+        ],
+        curiosidades: [
+            "O Coisa já enfrentou o Hulk diversas vezes nos quadrinhos.",
+            "Seu prato favorito é torta de maçã.",
+            "Ben Grimm é judeu e isso já foi tema de histórias importantes."
         ]
     }
 };
@@ -119,6 +139,12 @@ if (heroi && dados[heroi]) {
             <div class="frases">
                 ${p.frases.map(f => `<blockquote>${f}</blockquote>`).join("")}
             </div>
+
+            <!-- Curiosidades do personagem -->
+            <h2>Curiosidades</h2>
+            <ul class="curiosidades">
+                ${p.curiosidades.map(c => `<li>${c}</li>`).join("")}
+            </ul>
 
             <!-- Botão de voltar -->
             <div class="voltar">
