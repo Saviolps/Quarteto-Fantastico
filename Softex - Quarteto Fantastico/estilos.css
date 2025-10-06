@@ -328,3 +328,44 @@ footer strong {
     color: #00ffff;
     text-shadow: 0 0 8px #0077ff;
 }
+
+/* Curiosidades sobre o Quarteto Fantástico - agora com as cores predominantes do site */
+.curiosidades-section {
+    margin: 40px auto;
+    max-width: 950px;         /* Aumenta a largura máxima */
+    background: linear-gradient(145deg, rgba(0, 50, 100, 0.4), rgba(0, 15, 40, 0.7));
+    border-radius: 18px;      /* Bordas mais arredondadas */
+    box-shadow: 0 4px 32px rgba(0,255,255,0.10);
+    padding: 40px 48px;       /* Mais espaço interno */
+    border: 1.5px solid rgba(0, 200, 255, 0.28);
+}
+
+.curiosidades-section h2 {
+    color: #00ffff;
+    margin-bottom: 16px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00ffff, 0 0 25px #0088ff;
+}
+
+.curiosidades {
+    list-style: disc inside;
+    margin: 0;
+    padding: 0;
+}
+
+.curiosidades li {
+    margin-bottom: 12px;
+    font-size: 1.08em;
+    color: #e6faff;
+    line-height: 1.5;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+    padding: 6px 12px;
+    background: rgba(0, 40, 80, 0.25);
+}
+
+.curiosidades li:hover {
+    background: #00bfff33;
+    color: #fff;
+}
